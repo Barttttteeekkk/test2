@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+           
+            background-image:url(img/1.jpg);
+            background-size: cover;
+            padding: 20px;
+            background-color: #f34079;
+        }
+
+        h1 {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 120px;
+            color: aliceblue;
+        }
+
+        #options {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            align-items: center;
+          background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+          border: 0;
+          border-radius: 10px;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          font-family: "Codec cold",sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          height: 54px;
+          justify-content: center;
+          letter-spacing: .4px;
+          line-height: 1;
+          max-width: 100%;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 3px;
+          text-decoration: none;
+          text-transform: uppercase;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          margin-left: 25px;
+          font-size: auto;
+        }
+            
+
+        #yes {
+            transition: all 0.1s;
+        }
+    </style>
+    <title>Will You Be My Valentine?</title>
+</head>
+<body>
+    <div class="flex flex-col items-center justify-center h-screen -mt-16"><img class="h-[200px]" src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif">
+        <h1>Will You Be My Valentine?</h1>
+        <div id="options">
+            <button id="yes" onclick="reply('yes')" style="font-size: 58px; transform: scale(1.05); transition: transform 0.2s;">Yes</button>
+            <button id="no" onclick="reply('no')" style="font-size: 58px; transform: scale(1.05); transition: transform 0.2s;margin-left: 10%;">No</button>
+        </div>
+    
+        <script>
+            var messages = ["Are you sure?", "Really?", "Come on! Say yes!", "Please?", "I'm sad now", "Did I do something bad"];
+            var noClickCount = 0;
+    
+            function reply(answer) {
+                if (answer === 'no') {
+                    var yesButton = document.getElementById('yes');
+                    var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                    yesButton.textContent = randomMessage;
+                    yesButton.style.transform = 'scale(1.55)';
+                    noClickCount++;
+                    if (noClickCount >= 15) {
+                        var optionsDiv = document.getElementById('options');
+                        optionsDiv.innerHTML = '<button id="yes" onclick="reply(\'yes\')" style="font-size: 58px; transform: scale(1.05); transition: transform 0.2s;">What now?</button>';
+                    }
+                } else {
+                    window.location.href = 'https://youtube.com/shorts/rF25CKbS8lY';
+                }
+            }
+        </script>
+        </script>
+</body>
+</html>
